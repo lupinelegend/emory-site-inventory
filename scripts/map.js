@@ -8,8 +8,6 @@ $(window).on('load', function() {
   var completePoints = false;
   var completePolygons = false;
   var completePolylines = false;
-
-  map.scrollWheelZoom.enable();
   
   /**
    * Returns an Awesome marker with specified parameters
@@ -29,6 +27,8 @@ $(window).on('load', function() {
    * to specified (lat, lon) and zoom if all three are specified
    */
   function centerAndZoomMap(points) {
+    map.scrollWheelZoom.enable();
+    
     var lat = map.getCenter().lat, latSet = false;
     var lon = map.getCenter().lng, lonSet = false;
     var zoom = 12, zoomSet = false;
