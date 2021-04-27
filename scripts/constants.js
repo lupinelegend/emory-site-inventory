@@ -3,7 +3,7 @@ var constants = {
   notesSheetName: 'Notes',
   optionsSheetName: 'Options',
   pointsSheetName: 'Points',
-  polygonsSheetName: 'Polygons',
+  polygonsSheetName: 'Polygoons',
   polylinesSheetName: 'Polylines',
   /* OPTIONS */
 	// Map Info
