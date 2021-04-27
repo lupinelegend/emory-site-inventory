@@ -9,6 +9,8 @@ $(window).on('load', function() {
   var completePolygons = false;
   var completePolylines = false;
 
+  map.scrollWheelZoom.enable();
+  
   /**
    * Returns an Awesome marker with specified parameters
    */
