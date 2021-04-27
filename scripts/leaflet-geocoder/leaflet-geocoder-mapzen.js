@@ -917,13 +917,13 @@
             this.setSelectedResult(selected, e);
           }
         }, this)
-        /*.on(this._results, 'mouseover', function (e) {
+        .on(this._results, 'mouseover', function (e) {
           // Prevent scrolling over results list from zooming the map, if enabled
           this._scrollWheelZoomEnabled = map.scrollWheelZoom.enabled();
           if (this._scrollWheelZoomEnabled) {
             map.scrollWheelZoom.disable();
           }
-        }, this)*/
+        }, this)
         .on(this._results, 'mouseout', function (e) {
           // Re-enable scroll wheel zoom (if previously enabled) after
           // leaving the results box
