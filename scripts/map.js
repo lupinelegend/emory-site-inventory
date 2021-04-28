@@ -129,9 +129,21 @@ $(window).on('load', function() {
 
       if (point.Latitude !== '' && point.Longitude !== '') {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
-          .bindPopup("<b>" + point['Name'] + '</b><br>' +
-          (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
-          point['Description']);
+          .bindPopup(
+            "<b><u>" + point['Name'] + "</b></u><br>" +
+            (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
+            "(" + point['Description'] + ")" + "<br>" + 
+            "<b>Address: </b>" + (point['Location']) + "<br>" + 
+            "<b>Size: </b>" + (point['SF'] + ' SF') + "<br>" + 
+            "<b>Expiration: </b>" + (point['Expiration']) + "<br>" + 
+            "<b>County: </b>" + (point['County']) + "<br>" + 
+            "<b>MDs/APPs/Staff: </b>" + point['MDs'] + " / " + point['APPs'] + " / " + point['Staff'] + "<br>" + 
+            "<b>Avg. Daily Patients: </b>" + (point['ADP']) + "<br>" + 
+            "<b>Rent/SF: </b>" + (point['Rent/SF']) + "<br>" + 
+            "<b>Annual Rent: </b>" + (point['Annual Rent']) + "<br>" + 
+            "<b>OpEx/SF: </b>" + (point['OpEx']) + "<br>" + 
+            "<b>Lease Type: </b>" + (point['Lease Type'])
+          );
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
@@ -1009,7 +1021,7 @@ $(window).on('load', function() {
               // First, read 3 sheets: Options, Points, and Polylines
               $.when(
                 $.getJSON(apiUrl + spreadsheetId + '/values/Options?key=' + googleApiKey),
-                $.getJSON(apiUrl + spreadsheetId + '/values/Points?key=' + googleApiKey),
+                $.getJSON(apiUrl + spreadsheetId + '/values/Emory Site Inventory?key=' + googleApiKey),
                 $.getJSON(apiUrl + spreadsheetId + '/values/Polylines?key=' + googleApiKey)
               ).done(function(options, points, polylines) {
 
@@ -1063,7 +1075,7 @@ $(window).on('load', function() {
       
         $.when(
           $.get('./csv/Options.csv'),
-          $.get('./csv/Points.csv'),
+          $.get('./csv/Emory Site Inventory.csv'),
           $.get('./csv/Polylines.csv')
         ).done(function(options, points, polylines) {
       
