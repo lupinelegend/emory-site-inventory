@@ -17,7 +17,8 @@ map.on(L.Draw.Event.CREATED, function (e) {
       key = map._layers[element]._leaflet_id;
     }
   });
-  
+  console.log(key);
+
   layer.addTo(map._layers[key]);
 
 });
