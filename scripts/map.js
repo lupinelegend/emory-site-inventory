@@ -691,15 +691,12 @@ $(window).on('load', function() {
     }
 
     // Add draw toolbar
-    var editableLayers = new L.featureGroup({
-      pane: "markerPane"
-    });
+    var editableLayers = new L.featureGroup();
+    editableLayers.options = {
+      attribution: 'nick'
+    };
     map.addLayer(editableLayers);
-
-    console.log('Added layer:');
     console.log(editableLayers);
-    console.log(map._layers);
-    console.log(map._layers[530]);
     
     var drawControl = new L.Control.Draw({
       position: 'topright',

@@ -9,6 +9,15 @@ map.on(L.Draw.Event.CREATED, function (e) {
   }
 
   // Do whatever else you need to. (save to db; add to map etc)  
-  layer.addTo(map._layers[530]);
+  
+  // Find right layer to add shape to
+  var key;
+  Object.keys(map._layers).forEach(element => {
+    if (map._layers[element].options.attribution == 'nick') {
+      key = map._layers[element]._leaflet_id;
+    }
+  });
+  
+  layer.addTo(map._layers[key]);
 
 });
