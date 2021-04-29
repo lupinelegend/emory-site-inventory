@@ -1,4 +1,5 @@
 $(window).on('load', function() {
+  
   var documentSettings = {};
   var group2color = {};
 
@@ -688,6 +689,25 @@ $(window).on('load', function() {
     if (getSetting('_mapZoom') !== 'off') {
       L.control.zoom({position: getSetting('_mapZoom')}).addTo(map);
     }
+
+    // Add draw toolbar
+    var editableLayers = new L.featureGroup({
+      pane: "markerPane"
+    });
+    map.addLayer(editableLayers);
+
+    console.log('Added layer:');
+    console.log(editableLayers);
+    console.log(map._layers);
+    console.log(map._layers[530]);
+    
+    var drawControl = new L.Control.Draw({
+      position: 'topright',
+      edit: {
+        featureGroup: editableLayers
+      },
+     });
+     map.addControl(drawControl);
 
     map.on('zoomend', function() {
       togglePolygonLabels();
