@@ -143,7 +143,9 @@ $(window).on('load', function() {
             "<b>Rent/SF: </b>" + (point['Rent/SF']) + "<br>" + 
             "<b>Annual Rent: </b>" + (point['Annual Rent']) + "<br>" + 
             "<b>OpEx/SF: </b>" + (point['OpEx']) + "<br>" + 
-            "<b>Lease Type: </b>" + (point['Lease Type'])
+            "<b>Lease Type: </b>" + (point['Lease Type']) + 
+            "<b>MN Account: </b>" + (point['MN']) + 
+            "<b>SpeedType: </b>" + (point['Dept ST'])
           );
 
         if (layers !== undefined && layers.length !== 1) {
