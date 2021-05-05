@@ -701,10 +701,25 @@ $(window).on('load', function() {
     var drawControl = new L.Control.Draw({
       position: 'topright',
       edit: {
-        featureGroup: editableLayers
+        featureGroup: editableLayers,
+        circle: {
+          metric: false,
+          feet: false
+        }
       },
+      draw: {
+        circle: {
+          metric: false,
+          feet: false
+        }
+      }
      });
-     map.addControl(drawControl);
+    map.addControl(drawControl);
+
+    // L.Draw.Circle.options = {
+    //   metric: false
+    // };
+    // console.log(L.Draw.Circle);
 
     map.on('zoomend', function() {
       togglePolygonLabels();
