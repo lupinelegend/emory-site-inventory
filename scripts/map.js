@@ -707,10 +707,18 @@ $(window).on('load', function() {
         circle: {
           metric: false,
           feet: false
+        },
+        polyline: {
+          metric: false,
+          feet: false
         }
       },
       draw: {
         circle: {
+          metric: false,
+          feet: false
+        },
+        polyline: {
           metric: false,
           feet: false
         }
