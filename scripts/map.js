@@ -710,7 +710,7 @@ $(window).on('load', function() {
         },
         polyline: {
           metric: false,
-          feet: false
+          feet: true
         }
       },
       draw: {
@@ -720,7 +720,7 @@ $(window).on('load', function() {
         },
         polyline: {
           metric: false,
-          feet: false
+          feet: true
         }
       }
      });
