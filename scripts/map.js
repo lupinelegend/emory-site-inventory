@@ -138,6 +138,7 @@ $(window).on('load', function() {
             "<b>Size: </b>" + (point['SF'] + ' SF') + "<br>" + 
             "<b>Expiration: </b>" + (point['Expiration']) + "<br>" + 
             "<b>County: </b>" + (point['County']) + "<br>" + 
+            "<b>Exam Rooms: </b>" + (point['Exams']) + "<br>" + 
             "<b>MDs/APPs/Staff: </b>" + point['MDs'] + " / " + point['APPs'] + " / " + point['Staff'] + "<br>" + 
             "<b>Avg. Daily Patients: </b>" + (point['ADP']) + "<br>" + 
             "<b>Rent/SF: </b>" + (point['Rent/SF']) + "<br>" + 
